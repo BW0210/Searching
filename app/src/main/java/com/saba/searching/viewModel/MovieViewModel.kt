@@ -1,14 +1,11 @@
 package com.saba.searching.viewModel
 
-import android.os.Handler
-import android.os.Looper
 import androidx.lifecycle.ViewModel
 import com.saba.searching.core.data.Response
 import com.saba.searching.core.repository.MovieRepository
 import com.saba.searching.core.utility.LiveEvent
 import com.saba.searching.core.utility.execute
 import com.saba.searching.view.main.model.MovieDataResponseModel
-import com.saba.searching.view.main.model.MovieDetailsModel
 
 
 /**

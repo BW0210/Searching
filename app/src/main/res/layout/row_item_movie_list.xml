@@ -45,6 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/_7sdp"
             android:text="کارگردان"
+            android:maxLength="40"
             android:textColor="@color/colorGrey300"
             android:textSize="@dimen/_8ssp"
             app:layout_constraintEnd_toEndOf="parent"

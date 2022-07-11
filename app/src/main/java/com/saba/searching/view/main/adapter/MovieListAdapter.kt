@@ -8,46 +8,45 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.saba.searching.R
-import com.saba.searching.view.main.model.Attributes
 import com.saba.searching.view.main.model.MovieDetailsModel
 import kotlinx.android.synthetic.main.row_item_movie_list.view.*
 
 class MovieListAdapter(
-    private val onClick: (Attributes) -> Unit
-) : ListAdapter<Attributes, MovieListAdapter.SupportTicketListViewHolder>(
-    object : DiffUtil.ItemCallback<Attributes>() {
+    private val onClick: (MovieDetailsModel) -> Unit
+) : ListAdapter<MovieDetailsModel, MovieListAdapter.MovieListViewHolder>(
+    object : DiffUtil.ItemCallback<MovieDetailsModel>() {
         override fun areItemsTheSame(
-            oldItem: Attributes,
-            newItem: Attributes
+            oldItem: MovieDetailsModel,
+            newItem: MovieDetailsModel
         ): Boolean {
             return oldItem.movieId == newItem.movieId
         }
 
         override fun areContentsTheSame(
-            oldItem: Attributes,
-            newItem: Attributes
+            oldItem: MovieDetailsModel,
+            newItem: MovieDetailsModel
         ): Boolean {
             return oldItem == newItem
         }
     }
 ) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SupportTicketListViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(
             R.layout.row_item_movie_list,
             parent,
             false
         )
-        return SupportTicketListViewHolder(view)
+        return MovieListViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: SupportTicketListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MovieListViewHolder, position: Int) {
         holder.onBind(getItem(position))
     }
 
-    inner class SupportTicketListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class MovieListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun onBind(item: Attributes) {
+        fun onBind(item: MovieDetailsModel) {
 
             Glide.with(itemView.context)
                 .load(item.cover ?: "")
@@ -59,6 +58,10 @@ class MovieListAdapter(
             itemView.txt_movie_desc.text = item.descr
             itemView.txt_movie_rate.text = item.imdbRate
             itemView.txt_publish_year.text = "سال انتشار : " + item.proYear
+
+            itemView.setOnClickListener {
+                onClick.invoke(item)
+            }
 
 
         }

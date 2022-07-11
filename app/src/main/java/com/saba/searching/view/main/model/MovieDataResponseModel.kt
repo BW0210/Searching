@@ -6,5 +6,5 @@ import com.google.gson.annotations.SerializedName
 @Keep
 data class MovieDataResponseModel (
     @SerializedName("data")
-    val data: ArrayList<Attributes>
+    val data: ArrayList<MovieDetailsModel>
 )

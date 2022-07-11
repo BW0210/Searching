@@ -2,14 +2,13 @@ package com.saba.searching.view.main
 
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.jakewharton.rxbinding.widget.RxTextView
 import com.saba.searching.R
 import com.saba.searching.core.base.BaseActivity
 import com.saba.searching.core.data.Response
 import com.saba.searching.core.utility.observe
+import com.saba.searching.customClass.Alerter
 import com.saba.searching.view.main.adapter.MovieListAdapter
-import com.saba.searching.view.main.model.Attributes
 import com.saba.searching.view.main.model.MovieDetailsModel
 import com.saba.searching.viewModel.MovieViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -56,7 +55,7 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    fun updateMovieList(movieList: ArrayList<Attributes>){
+    fun updateMovieList(movieList: ArrayList<MovieDetailsModel>){
         if (!::movieAdapter.isInitialized){
             setInitMovieListList()
         }
@@ -65,7 +64,9 @@ class MainActivity : BaseActivity() {
     }
 
     private fun setInitMovieListList() {
-        movieAdapter = MovieListAdapter {}
+        movieAdapter = MovieListAdapter {
+            Alerter(Alerter.Status.I, null, "شما فیلم ${it.movieTitle} را انتخاب کردید. ")
+        }
         rec_movie.apply {
             layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false) //StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
             adapter = movieAdapter

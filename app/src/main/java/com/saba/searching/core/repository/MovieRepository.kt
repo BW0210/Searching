@@ -4,7 +4,6 @@ import com.saba.searching.core.data.Response
 import com.saba.searching.core.remote.ApiAll
 import com.saba.searching.core.utility.setNetWork
 import com.saba.searching.view.main.model.MovieDataResponseModel
-import com.saba.searching.view.main.model.MovieDetailsModel
 
 class MovieRepository constructor(
     val apiAll: ApiAll
