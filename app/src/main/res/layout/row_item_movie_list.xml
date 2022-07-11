@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/_10sdp"
+    android:layout_marginVertical="@dimen/_5sdp"
+    android:elevation="@dimen/_5sdp"
+    android:layoutDirection="ltr"
+    app:cardCornerRadius="@dimen/_10sdp"
+    app:cardElevation="@dimen/_5sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_item_movie_cover"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_movie_name"
+            style="@style/textFontNormal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:maxLines="2"
+            android:text="نام فیلم"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txt_publish_year"
+            app:layout_constraintTop_toBottomOf="@+id/img_item_movie_cover" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_movie_director"
+            style="@style/textFontNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:text="کارگردان"
+            android:textColor="@color/colorGrey300"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_movie_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_movie_rate"
+            style="@style/textFontNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:drawableRight="@drawable/ic_star"
+            android:drawablePadding="@dimen/_3sdp"
+            android:gravity="center"
+            android:text="9.52"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toTopOf="@+id/txt_publish_year"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_movie_name"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_publish_year"
+            style="@style/textFontNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="سال انتشار : 2017"
+            android:textColor="@color/colorGrey300"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_movie_director"
+            app:layout_constraintStart_toStartOf="@+id/txt_movie_rate"
+            app:layout_constraintTop_toBottomOf="@+id/txt_movie_rate" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_movie_desc"
+            style="@style/textFontNormal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="خلاصه فیلم خلاصه فیلم خلاصه فیلم خلاصه فیلم خلاصه فیلم خلاصه فیلم خلاصه فیلم "
+            android:textColor="@color/colorGrey300"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_movie_director" />
+
+
+        <!-- <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView5"
+            style="@style/textFontNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="رده سنی"
+            android:textColor="@color/colorGrey300"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/appCompatTextView6" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView6"
+            style="@style/textFontNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="12 - 80"
+            android:textColor="@color/colorGrey300"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toStartOf="@+id/appCompatTextView5"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView4" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

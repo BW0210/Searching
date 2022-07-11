@@ -1,0 +1,66 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="textFontNormal">
+        <item name="android:fontFamily">@font/iransansmobile</item>
+        <item name="fontFamily">@font/iransansmobile</item>
+    </style>
+
+    <!-- region TextInputLayout & TextInputEditText styles -->
+    <style name="textFontNormalTextInputLayout">
+        <item name="android:fontFamily">@font/iransansmobile</item>
+        <item name="fontFamily">@font/iransansmobile</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+    </style>
+
+
+    <style name="TextInputLayout.OutlineBox.CustomFont" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:theme">@style/ThemeOverlay.TextInputEditText.OutlinedBox.CustomFont</item>
+    </style>
+
+    <style name="ThemeOverlay.TextInputEditText.OutlinedBox.CustomFont" parent="ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="editTextStyle">@style/TextInputEditText.OutlinedBox.CustomFont</item>
+    </style>
+
+    <style name="TextInputEditText.OutlinedBox.CustomFont" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:fontFamily">@font/iransansmobile</item>
+    </style>
+
+    <style name="CustomFontTextInputLayout" parent="Widget.Design.TextInputLayout">
+        <item name="hintTextAppearance">@style/TextInputLayoutHintText</item>
+        <item name="helperTextTextAppearance">@style/TextInputLayoutHelperText</item>
+        <item name="errorTextAppearance">@style/TextInputLayoutErrorText</item>
+    </style>
+
+    <style name="TextInputLayoutHintText" parent="TextAppearance.Design.Hint">
+        <item name="android:fontFamily">@font/iransansmobile</item>
+    </style>
+
+    <style name="TextInputLayoutHelperText" parent="TextAppearance.Design.HelperText">
+        <item name="android:fontFamily">@font/iransansmobile</item>
+    </style>
+
+    <style name="TextInputLayoutErrorText" parent="TextAppearance.Design.Error">
+        <item name="android:fontFamily">@font/iransansmobile</item>
+    </style>
+
+    <style name="TextLabel" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/colorRed</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:fontFamily">@font/iransansmobile</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+        <item name="colorControlNormal">@color/colorGrey300</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+    </style>
+    <!-- endregion -->
+
+
+</resources>
